@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interface\Admin\Auth\AdminAuthRepositoryInterface;
+use App\Repository\Admin\Auth\AdminAuthRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -11,7 +13,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //  $this->app->bind(PatientAppointmentRepositoryInterface::class, PatientAppointmentRepository::class);
+         $this->app->bind(AdminAuthRepositoryInterface::class, AdminAuthRepository::class);
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::prefix('admin')->name('admin.')->group(function ()  {
+    Route::middleware(['admin'])->group(function () {
+    Route::get('/', function () {
+        return view('Back.Pages.index');
+    })->name('home');});
+    Route::middleware(['guest:admin'])->group(function () {
+        Route::get('login', [AdminAuthController::class,'login'])->name('login');
+        Route::post('store', [AdminAuthController::class,'store'])->name('store');
 
-Route::get('/', function () {
-    return view('welcome');
+    });
 });
