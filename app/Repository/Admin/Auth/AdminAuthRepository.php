@@ -2,6 +2,7 @@
 namespace App\Repository\Admin\Auth;
 
 use App\Interface\Admin\Auth\AdminAuthRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 
 class AdminAuthRepository implements AdminAuthRepositoryInterface{
 
@@ -13,7 +14,17 @@ class AdminAuthRepository implements AdminAuthRepositoryInterface{
     }
     public function store($request)
     {
-        // $request->ensureIsNotRateLimited;
         return $request->authenticate();
+    }
+    public function logout($request)
+    {
+        Auth::guard('admin')->logout();
+
+        $request->session()->forget('guard.admin');
+        // $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return to_route('admin.login')->with('success', 'Admin Logged Out Successfully');
     }
 }

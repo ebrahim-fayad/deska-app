@@ -58,7 +58,10 @@
              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                  <a class="dropdown-item" href="#">Profile</a>
                  <a class="dropdown-item" href="#">Settings</a>
-                 <a class="dropdown-item" href="#">Activities</a>
+                 <a class="dropdown-item" onclick="event.preventDefault();document.getElementById('form-logout').submit()" href="javascript;;">Log out</a>
+                 <form action="{{ route('admin.logout') }}" method="post" id="form-logout">
+                    @csrf
+                 </form>
              </div>
          </li>
 

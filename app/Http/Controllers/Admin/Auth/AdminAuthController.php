@@ -21,4 +21,8 @@ class AdminAuthController extends Controller
     {
         return $this->Admin->store($request);
     }
+    public function logout( Request $request )
+    {
+        return $this->Admin->logout($request);
+    }
 }

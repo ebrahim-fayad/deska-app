@@ -18,6 +18,6 @@ class Admin
         if(auth()->guard('admin')->check()){
             return $next($request);
         }
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.login')->with('fail','you must be logged in');
     }
 }
