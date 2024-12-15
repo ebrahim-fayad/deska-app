@@ -9,10 +9,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link  @yield('home-active')">Home</a>
-                        <a href="about.html" class="nav-item nav-link @yield('about-active')">About</a>
-                        <a href="service.html" class="nav-item nav-link @yield('service-active')">Service</a>
-                        <a href="contact.html" class="nav-item nav-link @yield('contact-active')">Contact</a>
+                        <a href=" {{ route('front.home') }} " class="nav-item nav-link  @yield('home-active')">Home</a>
+                        <a href="{{ route('front.about') }}" class="nav-item nav-link @yield('about-active')">About</a>
+                        <a href="{{ route('front.services') }}" class="nav-item nav-link @yield('service-active')">Service</a>
+                        <a href="{{ route('front.contact') }}" class="nav-item nav-link @yield('contact-active')">Contact</a>
                     </div>
                 </div>
             </nav>

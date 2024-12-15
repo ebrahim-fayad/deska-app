@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('Front.index');
+})->name('front.home');
+Route::name('front.')->group(function () {
+    Route::view('/about','Front.about')->name('about');
+    Route::view('/services','Front.services')->name('services');
+    Route::view('/contact','Front.contact')->name('contact');
 });
-
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
