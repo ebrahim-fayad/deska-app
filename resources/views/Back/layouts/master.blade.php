@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +8,7 @@
     <link rel="icon" href="favicon.ico">
     @include('Back.layouts.head')
   </head>
-  <body class="vertical  dark rtl ">
+  <body class="vertical  dark @if (LaravelLocalization::getCurrentLocale() == 'ar')  rtl @endif ">
     <div class="wrapper">
      <!-- nav bar -->
      @include('Back.layouts.nav-bar')
