@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
-                        <img class="img-fluid" src="img/about.png">
+                        <img class="img-fluid" src="{{ asset('front-assets') }}/img/about.png">
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">About Us</div>
@@ -130,7 +130,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-1.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -142,7 +142,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-2.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -154,7 +154,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-3.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -166,7 +166,7 @@
                         <div class="team-item">
                             <h5>Full Name</h5>
                             <p class="mb-4">Designation</p>
-                            <img class="img-fluid rounded-circle w-100 mb-4" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-4.jpg" alt="">
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
