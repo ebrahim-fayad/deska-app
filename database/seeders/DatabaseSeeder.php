@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Admin;
+use App\Models\Service;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,8 +16,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Admin::truncate();
+        Service::truncate();
         $this->call([
             AdminSeeder::class,
+            ServicesSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

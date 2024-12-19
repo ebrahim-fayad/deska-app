@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\AdminAuthController;
 use App\Http\Controllers\Admin\Auth\AdminForgotPasswordController;
+use App\Http\Controllers\Admin\Services\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,12 @@ Route::prefix('admin')->name('admin.')->group(function ()  {
         return view('Back.Pages.index');
     })->name('home');
     Route::post('logout', [AdminAuthController::class,'logout'])->name('logout');
+    /*================================= Services Routes===============================*/
+        Route::controller(ServiceController::class)->group(function () {
+            Route::resource('services', ServiceController::class);
+            Route::get('services/restore/{Service}', 'restore')->name('service.restore');
+            Route::delete('services/force-delete/{Service}','forceDelete')->name('service.force-delete');   
+    });
 });
     Route::middleware(['guest:admin'])->group(function () {
         Route::get('login', [AdminAuthController::class,'login'])->name('login');

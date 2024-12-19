@@ -68,4 +68,5 @@ return [
     'instagram' => 'Instagram',
     'youtube' => 'Youtube',
     'twitter' => 'Twitter',
+    'services_trashed'=>'Services Trashed',
 ];

@@ -58,7 +58,7 @@
         @enderror
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> Stay logged in
+                <input type="checkbox" name="remember" value="remember-me"> Stay logged in
             </label>
         </div>
 

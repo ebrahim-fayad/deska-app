@@ -1,249 +1,223 @@
 <script src="{{ asset('back-assets') }}/js/jquery.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/popper.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/moment.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/bootstrap.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/simplebar.min.js"></script>
-    <script src='{{ asset('back-assets') }}/js/daterangepicker.js'></script>
-    <script src='{{ asset('back-assets') }}/js/jquery.stickOnScroll.js'></script>
-    <script src="{{ asset('back-assets') }}/js/tinycolor-min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/config.js"></script>
-    <script src="{{ asset('back-assets') }}/js/d3.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/topojson.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/datamaps.all.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/datamaps-zoomto.js"></script>
-    <script src="{{ asset('back-assets') }}/js/datamaps.custom.js"></script>
-    <script src="{{ asset('back-assets') }}/js/Chart.min.js"></script>
-    {{ asset('back-assets') }}
-    <script>
-      /* defind global options */
-      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
-      Chart.defaults.global.defaultFontColor = colors.mutedColor;
-    </script>
-    <script src="{{ asset('back-assets') }}/js/gauge.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/jquery.sparkline.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/apexcharts.min.js"></script>
-    <script src="{{ asset('back-assets') }}/js/apexcharts.custom.js"></script>
-    <script src='{{ asset('back-assets') }}/js/jquery.mask.min.js'></script>
-    <script src='{{ asset('back-assets') }}/js/select2.min.js'></script>
-    <script src='{{ asset('back-assets') }}/js/jquery.steps.min.js'></script>
-    <script src='{{ asset('back-assets') }}/js/jquery.validate.min.js'></script>
-    <script src='{{ asset('back-assets') }}/js/jquery.timepicker.js'></script>
-    <script src='{{ asset('back-assets') }}/js/dropzone.min.js'></script>
-    <script src='{{ asset('back-assets') }}/js/uppy.min.js'></script>
-    <script src='{{ asset('back-assets') }}/js/quill.min.js'></script>
-    <script>
-      $('.select2').select2(
-      {
+<script src="{{ asset('back-assets') }}/js/popper.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/moment.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/bootstrap.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/simplebar.min.js"></script>
+<script src='{{ asset('back-assets') }}/js/daterangepicker.js'></script>
+<script src='{{ asset('back-assets') }}/js/jquery.stickOnScroll.js'></script>
+<script src="{{ asset('back-assets') }}/js/tinycolor-min.js"></script>
+<script src="{{ asset('back-assets') }}/js/config.js"></script>
+<script src="{{ asset('back-assets') }}/js/d3.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/topojson.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/datamaps.all.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/datamaps-zoomto.js"></script>
+<script src="{{ asset('back-assets') }}/js/datamaps.custom.js"></script>
+<script src="{{ asset('back-assets') }}/js/Chart.min.js"></script>
+{{ asset('back-assets') }}
+<script>
+    /* defind global options */
+    Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+    Chart.defaults.global.defaultFontColor = colors.mutedColor;
+</script>
+<script src="{{ asset('back-assets') }}/js/gauge.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/jquery.sparkline.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/apexcharts.min.js"></script>
+<script src="{{ asset('back-assets') }}/js/apexcharts.custom.js"></script>
+<script src='{{ asset('back-assets') }}/js/jquery.mask.min.js'></script>
+<script src='{{ asset('back-assets') }}/js/select2.min.js'></script>
+<script src='{{ asset('back-assets') }}/js/jquery.steps.min.js'></script>
+<script src='{{ asset('back-assets') }}/js/jquery.validate.min.js'></script>
+<script src='{{ asset('back-assets') }}/js/jquery.timepicker.js'></script>
+<script src='{{ asset('back-assets') }}/js/dropzone.min.js'></script>
+<script src='{{ asset('back-assets') }}/js/uppy.min.js'></script>
+<script src='{{ asset('back-assets') }}/js/quill.min.js'></script>
+<script>
+    $('.select2').select2({
         theme: 'bootstrap4',
-      });
-      $('.select2-multi').select2(
-      {
+    });
+    $('.select2-multi').select2({
         multiple: true,
         theme: 'bootstrap4',
-      });
-      $('.drgpicker').daterangepicker(
-      {
+    });
+    $('.drgpicker').daterangepicker({
         singleDatePicker: true,
         timePicker: false,
         showDropdowns: true,
-        locale:
-        {
-          format: 'MM/DD/YYYY'
+        locale: {
+            format: 'MM/DD/YYYY'
         }
-      });
-      $('.time-input').timepicker(
-      {
+    });
+    $('.time-input').timepicker({
         'scrollDefault': 'now',
         'zindex': '9999' /* fix modal open */
-      });
-      /** date range picker */
-      if ($('.datetimes').length)
-      {
-        $('.datetimes').daterangepicker(
-        {
-          timePicker: true,
-          startDate: moment().startOf('hour'),
-          endDate: moment().startOf('hour').add(32, 'hour'),
-          locale:
-          {
-            format: 'M/DD hh:mm A'
-          }
+    });
+    /** date range picker */
+    if ($('.datetimes').length) {
+        $('.datetimes').daterangepicker({
+            timePicker: true,
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour').add(32, 'hour'),
+            locale: {
+                format: 'M/DD hh:mm A'
+            }
         });
-      }
-      var start = moment().subtract(29, 'days');
-      var end = moment();
+    }
+    var start = moment().subtract(29, 'days');
+    var end = moment();
 
-      function cb(start, end)
-      {
+    function cb(start, end) {
         $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-      }
-      $('#reportrange').daterangepicker(
-      {
+    }
+    $('#reportrange').daterangepicker({
         startDate: start,
         endDate: end,
-        ranges:
-        {
-          'Today': [moment(), moment()],
-          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
-          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf(
+                'month')]
         }
-      }, cb);
-      cb(start, end);
-      $('.input-placeholder').mask("00/00/0000",
-      {
+    }, cb);
+    cb(start, end);
+    $('.input-placeholder').mask("00/00/0000", {
         placeholder: "__/__/____"
-      });
-      $('.input-zip').mask('00000-000',
-      {
+    });
+    $('.input-zip').mask('00000-000', {
         placeholder: "____-___"
-      });
-      $('.input-money').mask("#.##0,00",
-      {
+    });
+    $('.input-money').mask("#.##0,00", {
         reverse: true
-      });
-      $('.input-phoneus').mask('(000) 000-0000');
-      $('.input-mixed').mask('AAA 000-S0S');
-      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
-      {
-        translation:
-        {
-          'Z':
-          {
-            pattern: /[0-9]/,
-            optional: true
-          }
+    });
+    $('.input-phoneus').mask('(000) 000-0000');
+    $('.input-mixed').mask('AAA 000-S0S');
+    $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+        translation: {
+            'Z': {
+                pattern: /[0-9]/,
+                optional: true
+            }
         },
         placeholder: "___.___.___.___"
-      });
-      // editor
-      var editor = document.getElementById('editor');
-      if (editor)
-      {
+    });
+    // editor
+    var editor = document.getElementById('editor');
+    if (editor) {
         var toolbarOptions = [
-          [
-          {
-            'font': []
-          }],
-          [
-          {
-            'header': [1, 2, 3, 4, 5, 6, false]
-          }],
-          ['bold', 'italic', 'underline', 'strike'],
-          ['blockquote', 'code-block'],
-          [
-          {
-            'header': 1
-          },
-          {
-            'header': 2
-          }],
-          [
-          {
-            'list': 'ordered'
-          },
-          {
-            'list': 'bullet'
-          }],
-          [
-          {
-            'script': 'sub'
-          },
-          {
-            'script': 'super'
-          }],
-          [
-          {
-            'indent': '-1'
-          },
-          {
-            'indent': '+1'
-          }], // outdent/indent
-          [
-          {
-            'direction': 'rtl'
-          }], // text direction
-          [
-          {
-            'color': []
-          },
-          {
-            'background': []
-          }], // dropdown with defaults from theme
-          [
-          {
-            'align': []
-          }],
-          ['clean'] // remove formatting button
+            [{
+                'font': []
+            }],
+            [{
+                'header': [1, 2, 3, 4, 5, 6, false]
+            }],
+            ['bold', 'italic', 'underline', 'strike'],
+            ['blockquote', 'code-block'],
+            [{
+                    'header': 1
+                },
+                {
+                    'header': 2
+                }
+            ],
+            [{
+                    'list': 'ordered'
+                },
+                {
+                    'list': 'bullet'
+                }
+            ],
+            [{
+                    'script': 'sub'
+                },
+                {
+                    'script': 'super'
+                }
+            ],
+            [{
+                    'indent': '-1'
+                },
+                {
+                    'indent': '+1'
+                }
+            ], // outdent/indent
+            [{
+                'direction': 'rtl'
+            }], // text direction
+            [{
+                    'color': []
+                },
+                {
+                    'background': []
+                }
+            ], // dropdown with defaults from theme
+            [{
+                'align': []
+            }],
+            ['clean'] // remove formatting button
         ];
-        var quill = new Quill(editor,
-        {
-          modules:
-          {
-            toolbar: toolbarOptions
-          },
-          theme: 'snow'
+        var quill = new Quill(editor, {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
         });
-      }
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function()
-      {
+    }
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
         'use strict';
-        window.addEventListener('load', function()
-        {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form)
-          {
-            form.addEventListener('submit', function(event)
-            {
-              if (form.checkValidity() === false)
-              {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
         }, false);
-      })();
-    </script>
-    <script>
-      var uptarg = document.getElementById('drag-drop-area');
-      if (uptarg)
-      {
-        var uppy = Uppy.Core().use(Uppy.Dashboard,
-        {
-          inline: true,
-          target: uptarg,
-          proudlyDisplayPoweredByUppy: false,
-          theme: 'dark',
-          width: 770,
-          height: 210,
-          plugins: ['Webcam']
-        }).use(Uppy.Tus,
-        {
-          endpoint: 'https://master.tus.io/files/'
+    })();
+</script>
+<script>
+    var uptarg = document.getElementById('drag-drop-area');
+    if (uptarg) {
+        var uppy = Uppy.Core().use(Uppy.Dashboard, {
+            inline: true,
+            target: uptarg,
+            proudlyDisplayPoweredByUppy: false,
+            theme: 'dark',
+            width: 770,
+            height: 210,
+            plugins: ['Webcam']
+        }).use(Uppy.Tus, {
+            endpoint: 'https://master.tus.io/files/'
         });
-        uppy.on('complete', (result) =>
-        {
-          console.log('Upload complete! We’ve uploaded these files:', result.successful)
+        uppy.on('complete', (result) => {
+            console.log('Upload complete! We’ve uploaded these files:', result.successful)
         });
-      }
-    </script>
-    <script src="{{ asset('back-assets') }}/js/apps.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+    }
+</script>
+<script src="{{ asset('back-assets') }}/js/apps.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
-      function gtag()
-      {
+    function gtag() {
         dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-56159088-1');
-    </script>
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+</script>
+<script>
+    function confirmDelete(id) {
+        if (confirm('Are you sure you want to delete this record ?')) {
+            document.getElementById('deleteForm-' + id).submit();
+        }
+    }
+</script>
