@@ -125,7 +125,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('front-assets') }}/img/testimonial-1.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -136,7 +136,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('front-assets') }}/img/testimonial-2.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -147,7 +147,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('front-assets') }}/img/testimonial-3.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
@@ -158,7 +158,7 @@
                         <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                         <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
                         <div class="d-flex align-items-center">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ asset('front-assets') }}/img/testimonial-4.jpg">
                             <div class="ps-3">
                                 <h6 class="mb-1">Client Name</h6>
                                 <small>Profession</small>
