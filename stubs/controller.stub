@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class {{ class }} extends Controller
 {
     protected $repository;
-    public function __construct (interface $repository){
+    public function __construct (/*interface*/ $repository){
         $this->repository = $repository;
     }
     /**
@@ -16,7 +16,7 @@ class {{ class }} extends Controller
      */
     public function index()
     {
-        //
+        return $this->repository->index();
     }
 
     /**
@@ -24,46 +24,58 @@ class {{ class }} extends Controller
      */
     public function create()
     {
-        //
+        return $this->repository->create();
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+   public function store({{ storeRequest }} $request)
     {
-        //
+        return $this->repository->store($request);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show({{ model }} ${{ modelVariable }})
     {
-        //
+        return $this->repository->show( ${{ modelVariable }});
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit({{ model }} ${{ modelVariable }})
     {
-        //
+        return $this->repository->edit( ${{ modelVariable }});
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update({{ updateRequest }} $request, {{ model }} ${{ modelVariable }})
     {
-        //
+        return $this->repository->update($request, ${{ modelVariable }});
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+      public function destroy({{ model }} ${{ modelVariable }})
     {
-        //
+        return $this->repository->destroy( ${{ modelVariable }});
+
+    }
+    public function restore( $slug)
+    {
+        return $this->repository->restore($slug);
+
+    }
+    public function forceDelete( $slug)
+    {
+        return $this->repository->forceDelete($slug);
+
     }
 }

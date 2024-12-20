@@ -69,4 +69,5 @@ return [
     'youtube' => 'يوتيوب',
     'twitter' => 'تويتر',
     'services_trashed' => 'الخدمات المحذوفة',
+    'features_trashed' => 'المزايا المحذوفة',
 ];

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\AdminAuthController;
 use App\Http\Controllers\Admin\Auth\AdminForgotPasswordController;
+use App\Http\Controllers\Admin\Features\FeatureController;
 use App\Http\Controllers\Admin\Services\ServiceController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,13 @@ Route::prefix('admin')->name('admin.')->group(function ()  {
         Route::controller(ServiceController::class)->group(function () {
             Route::resource('services', ServiceController::class);
             Route::get('services/restore/{Service}', 'restore')->name('service.restore');
-            Route::delete('services/force-delete/{Service}','forceDelete')->name('service.force-delete');   
+            Route::delete('services/force-delete/{Service}','forceDelete')->name('service.force-delete');
+    });
+    /*================================= Feature Routes===============================*/
+        Route::controller(FeatureController::class)->group(function () {
+            Route::resource('features', FeatureController::class);
+            Route::get('features/restore/{Feature}', 'restore')->name('features.restore');
+            Route::delete('features/force-delete/{Service}','forceDelete')->name('features.force-delete');
     });
 });
     Route::middleware(['guest:admin'])->group(function () {
