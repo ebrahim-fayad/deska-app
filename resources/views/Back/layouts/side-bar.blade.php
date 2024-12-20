@@ -34,6 +34,7 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <x-side-tab href="{{ route('admin.services.index') }}" icon="fe-codesandbox" name="{{ __('keyWords.services') }}"></x-side-tab>
             <x-side-tab href="{{ route('admin.features.index') }}" icon="fe-bookmark" name="{{ __('keyWords.features') }}"></x-side-tab>
+            <x-side-tab href="{{ route('admin.messages.index') }}" icon="fe-message-circle" name="{{ __('keyWords.messages') }}"></x-side-tab>
         </ul>
 
     </nav>

@@ -26,7 +26,7 @@ class FeatureRequest extends FormRequest
             'title' => [
                 'required',
                 'string',
-                Rule::unique('services', 'title')->ignore($this->route('features')),
+                Rule::unique('features', 'title')->ignore($this->route('features')),
 
             ],
             'icon' => 'required|string',
