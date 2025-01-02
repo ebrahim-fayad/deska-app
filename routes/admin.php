@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\Auth\AdminForgotPasswordController;
 use App\Http\Controllers\Admin\Features\FeatureController;
 use App\Http\Controllers\Admin\Messages\MessageController;
 use App\Http\Controllers\Admin\Services\ServiceController;
+use App\Http\Controllers\Admin\Subscribers\SubscriberController;
+use App\Http\Controllers\Admin\Testmonials\TestmonialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +40,14 @@ Route::prefix('admin')->name('admin.')->group(function ()  {
     /*================================= Messages Routes===============================*/
         Route::controller(MessageController::class)->group(function () {
             Route::resource('messages', MessageController::class)->except('edit','update');
+    });
+    /*================================= Subscribers Routes===============================*/
+        Route::controller(SubscriberController::class)->group(function () {
+            Route::resource('subscribers', SubscriberController::class)->only('index','destroy');
+    });
+    /*================================= Testmonials Routes===============================*/
+        Route::controller(TestmonialController::class)->group(function () {
+            Route::resource('testmonials', TestmonialController::class);
     });
 });
     Route::middleware(['guest:admin'])->group(function () {
