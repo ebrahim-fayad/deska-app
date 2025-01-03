@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TestmonialsRequest extends FormRequest
+class MemberRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,20 +22,21 @@ class TestmonialsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'position' => 'required|string',
-            'image' => 'required|sometimes|mimes:jpg,png',
-            'description' => 'required|string',
+           'name'=>['required','string','max:255'],
+           'position'=>['required','string','max:255'],
+           'facebook'=>['nullable','string','url'],
+           'twitter'=>['nullable','string','url'],
+           'linkedin'=>['nullable','string','url'],
         ];
     }
-
-    public function attributes(): array
-    {
+    public function messages(): array{
         return [
             'name' => __("keywords.name"),
             'position' => __("keywords.position"),
             'image' => __("keywords.image"),
-            'description' => __("keywords.description"),
+            'facebook' => __("keywords.facebook"),
+            'twitter' => __("keywords.twitter"),
+            'linkedin' => __("keywords.linkedin"),
         ];
     }
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Auth\AdminAuthController;
 use App\Http\Controllers\Admin\Auth\AdminForgotPasswordController;
 use App\Http\Controllers\Admin\Features\FeatureController;
+use App\Http\Controllers\Admin\Members\MemberController;
 use App\Http\Controllers\Admin\Messages\MessageController;
 use App\Http\Controllers\Admin\Services\ServiceController;
 use App\Http\Controllers\Admin\Subscribers\SubscriberController;
@@ -48,6 +49,10 @@ Route::prefix('admin')->name('admin.')->group(function ()  {
     /*================================= Testmonials Routes===============================*/
         Route::controller(TestmonialController::class)->group(function () {
             Route::resource('testmonials', TestmonialController::class);
+    });
+    /*================================= Members Routes===============================*/
+        Route::controller(MemberController::class)->group(function () {
+            Route::resource('members', MemberController::class);
     });
 });
     Route::middleware(['guest:admin'])->group(function () {

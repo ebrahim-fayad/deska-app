@@ -1,35 +1,49 @@
-@extends('Back.layouts.master', ['title' => __('keyWords.edit_testmonial')])
+@extends('Back.layouts.master', ['title' => __('keyWords.add_new_member')])
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2 class="h5 page-title">{{ __('keyWords.edit_testmonial') }}</h2>
+                <h2 class="h5 page-title">{{ __('keyWords.add_new_member') }}</h2>
 
                 <div class="card shadow">
                     <div class="card-body">
-                        <form action="{{ route('admin.testmonials.update', $testmonial) }}" method="post"
-                            enctype="multipart/form-data">
+                        <form action="{{ route('admin.members.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            @method('put')
+                            @error('error')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <div class="row">
                                 <div class="col-md-6">
                                     <x-form-label field="title"></x-form-label>
                                     <input type="text" name="name" class="form-control"
-                                        placeholder="{{ __('keywords.name') }}" value="{{ $testmonial->name }} ">
+                                        placeholder="{{ __('keywords.name') }}" value="{{ old('name') }}">
                                     <x-validation-error field="name"></x-validation-error>
                                 </div>
 
                                 <div class="col-md-6">
                                     <x-form-label field="position"></x-form-label>
                                     <input type="text" name="position" class="form-control"
-                                        placeholder="{{ __('keywords.position') }}" value="{{ $testmonial->position }}">
+                                        placeholder="{{ __('keywords.position') }}" value="{{ old('position') }}">
                                     <x-validation-error field="position"></x-validation-error>
                                 </div>
 
-                                <div class="col-md-12 mt-2">
-                                    <x-form-label field="description"></x-form-label>
-                                    <textarea name="description" class="form-control" placeholder="{{ __('keywords.description') }}">{{ $testmonial->description }}</textarea>
-                                    <x-validation-error field="description"></x-validation-error>
+                                <div class="col-md-4 mt-3">
+                                    <x-form-label field="facebook"></x-form-label>
+                                    <input type="text" name="facebook" class="form-control"
+                                        placeholder="{{ __('keywords.facebook') }}" value="{{ old('facebook') }}">
+                                    <x-validation-error field="facebook"></x-validation-error>
+                                </div>
+                                <div class="col-md-4 mt-3">
+                                    <x-form-label field="twitter"></x-form-label>
+                                    <input type="text" name="twitter" class="form-control"
+                                        placeholder="{{ __('keywords.twitter') }}" value="{{ old('twitter') }}">
+                                    <x-validation-error field="twitter"></x-validation-error>
+                                </div>
+                                <div class="col-md-4 mt-3">
+                                    <x-form-label field="linkedin"></x-form-label>
+                                    <input type="text" name="linkedin" class="form-control"
+                                        placeholder="{{ __('keywords.linkedin') }}" value="{{ old('linkedin') }}">
+                                    <x-validation-error field="linkedin"></x-validation-error>
                                 </div>
                                 <div class="col-md-12 mt-2 mb-15">
                                     <div class="custom-file " style="height: 100%">
@@ -41,8 +55,7 @@
                                                 <x-validation-error field="image"></x-validation-error>
                                             </div>
                                             <div class="col-md-6">
-
-                                                <img style="border-radius:50%" src="{{ asset("images/$testmonial->image ") }}"   width="150px" height="150px"
+                                                <img style="border-radius:50%" width="150px" height="150px"
                                                     id="output" />
                                             </div>
                                         </div>

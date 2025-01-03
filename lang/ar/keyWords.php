@@ -47,6 +47,11 @@ return [
     'name' => 'الاسم',
     'subject' => 'الموضوع',
     'message' => 'الرسالة',
+    // members module
+    'member' => 'الأعضاء',
+    'add_new_member' => 'اضافة عضو جديد',
+    'show_member' => 'معلومات العضو',
+    'edit_member' => 'التعديل علي العضو',
 
     // subscribers module
     'subscribers' => 'المشتركين',

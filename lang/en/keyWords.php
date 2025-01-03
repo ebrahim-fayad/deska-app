@@ -58,6 +58,11 @@ return [
     'add_new_testmonial' => 'Add New Testmonial',
     'show_testmonial' => 'Show Testmonial',
     'edit_testmonial' => 'Edit Testmonial',
+    // members module
+    'member' => 'Members',
+    'add_new_member' => 'Add New Member',
+    'show_member' => 'Show Member',
+    'edit_member' => 'Edit Member',
 
     // settings module
     'settings' => 'Settings',

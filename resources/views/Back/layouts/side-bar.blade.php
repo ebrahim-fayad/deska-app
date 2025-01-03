@@ -37,6 +37,7 @@
             <x-side-tab href="{{ route('admin.messages.index') }}" icon="fe-message-circle" name="{{ __('keyWords.messages') }}"></x-side-tab>
             <x-side-tab href="{{ route('admin.subscribers.index') }}" icon="fe-users" name="{{ __('keyWords.subscribers') }}"></x-side-tab>
             <x-side-tab href="{{ route('admin.testmonials.index') }}" icon="fe-message-square" name="{{ __('keyWords.testmonials') }}"></x-side-tab>
+            <x-side-tab href="{{ route('admin.members.index') }}" icon="fe-users" name="{{ __('keyWords.member') }}"></x-side-tab>
         </ul>
 
     </nav>
