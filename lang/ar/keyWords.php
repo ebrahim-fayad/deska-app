@@ -75,4 +75,5 @@ return [
     'twitter' => 'تويتر',
     'services_trashed' => 'الخدمات المحذوفة',
     'features_trashed' => 'المزايا المحذوفة',
+    'logo'=>'لوجو الموقع',
 ];

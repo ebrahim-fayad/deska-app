@@ -9,6 +9,7 @@ use App\Interface\Admin\Members\MembersRepositoryInterface;
 use App\Interface\Admin\Messages\MessagesRepositoryInterface;
 use App\Interface\Admin\Services\ServicesRepositoryInterface;
 use App\Interface\Admin\Testmonials\TestmonialsRepositoryInterface;
+use App\Interface\Front\FrontRepositoryInterface;
 use App\Repository\Admin\Auth\AdminAuthRepository;
 use App\Repository\Admin\Auth\AdminForgotPasswordRepository;
 use App\Repository\Admin\Features\FeaturesRepository;
@@ -16,6 +17,7 @@ use App\Repository\Admin\Members\MembersRepository;
 use App\Repository\Admin\Messages\MessagesRepository;
 use App\Repository\Admin\Services\ServicesRepository;
 use App\Repository\Admin\Testmonials\TestmonialsRepository;
+use App\Repository\Front\FrontRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -32,6 +34,7 @@ class RepositoryServiceProvider extends ServiceProvider
          $this->app->bind(MessagesRepositoryInterface::class, MessagesRepository::class);
          $this->app->bind(TestmonialsRepositoryInterface::class, TestmonialsRepository::class);
          $this->app->bind(MembersRepositoryInterface::class, MembersRepository::class);
+         $this->app->bind(FrontRepositoryInterface::class, FrontRepository::class);
     }
 
     /**

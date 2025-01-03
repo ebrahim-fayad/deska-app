@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\Admin;
 use App\Models\Feature;
 use App\Models\Service;
+use App\Models\Setting;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,10 +20,12 @@ class DatabaseSeeder extends Seeder
         Admin::truncate();
         Service::truncate();
         Feature::truncate();
+        Setting::truncate();
         $this->call([
             AdminSeeder::class,
             ServicesSeeder::class,
             FeatureSeeder::class,
+            SettingSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

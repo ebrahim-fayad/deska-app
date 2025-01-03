@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Front.index');
-})->name('front.home');
+// Route::get('/', function () {
+//     return view('Front.index');
+// })->name('front.home');
+Route::name('front.')->controller(FrontController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    Route::get('/services','services')->name('services');
+});
 Route::name('front.')->group(function () {
     Route::view('/about','Front.about')->name('about');
-    Route::view('/services','Front.services')->name('services');
     Route::view('/contact','Front.contact')->name('contact');
 });
 // Route::get('/dashboard', function () {

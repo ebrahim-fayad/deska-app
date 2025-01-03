@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Features\FeatureController;
 use App\Http\Controllers\Admin\Members\MemberController;
 use App\Http\Controllers\Admin\Messages\MessageController;
 use App\Http\Controllers\Admin\Services\ServiceController;
+use App\Http\Controllers\Admin\Settings\SettingController;
 use App\Http\Controllers\Admin\Subscribers\SubscriberController;
 use App\Http\Controllers\Admin\Testmonials\TestmonialController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,10 @@ Route::prefix('admin')->name('admin.')->group(function ()  {
     /*================================= Members Routes===============================*/
         Route::controller(MemberController::class)->group(function () {
             Route::resource('members', MemberController::class);
+    });
+    /*================================= settings Routes===============================*/
+        Route::controller(SettingController::class)->group(function () {
+            Route::resource('settings', SettingController::class)->only(['index','update']);
     });
 });
     Route::middleware(['guest:admin'])->group(function () {

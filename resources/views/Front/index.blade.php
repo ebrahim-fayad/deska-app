@@ -96,108 +96,31 @@
                 <h2 class="mb-5">We Provide Solutions On Your Business</h2>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded h-100">
-                        <div class="d-flex justify-content-between">
-                            <div class="service-icon">
-                                <i class="fa fa-user-tie fa-2x"></i>
+                @php
+                    $delays = [0.1, 0.3, 0.6];
+                    $delayIndex = 0;
+                @endphp
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ $delays[$delayIndex] }}s">
+                        <div class="service-item rounded h-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="service-icon">
+                                    <i class="{{ $service->icon }}"></i>
+                                </div>
+                                <a class="service-btn" href="">
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
                             </div>
-                            <a class="service-btn" href="">
-                                <i class="fa fa-link fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="mb-3">Business Research</h5>
-                            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
-                                sed stet lorem.</span>
+                            <div class="p-5">
+                                <h5 class="mb-3">{{ $service->title }}</h5>
+                                <span>{{ $service->description }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded h-100">
-                        <div class="d-flex justify-content-between">
-                            <div class="service-icon">
-                                <i class="fa fa-chart-pie fa-2x"></i>
-                            </div>
-                            <a class="service-btn" href="">
-                                <i class="fa fa-link fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="mb-3">Stretagic Planning</h5>
-                            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
-                                sed stet lorem.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-item rounded h-100">
-                        <div class="d-flex justify-content-between">
-                            <div class="service-icon">
-                                <i class="fa fa-chart-line fa-2x"></i>
-                            </div>
-                            <a class="service-btn" href="">
-                                <i class="fa fa-link fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="mb-3">Market Analysis</h5>
-                            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
-                                sed stet lorem.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded h-100">
-                        <div class="d-flex justify-content-between">
-                            <div class="service-icon">
-                                <i class="fa fa-chart-area fa-2x"></i>
-                            </div>
-                            <a class="service-btn" href="">
-                                <i class="fa fa-link fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="mb-3">Financial Analaysis</h5>
-                            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
-                                sed stet lorem.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded h-100">
-                        <div class="d-flex justify-content-between">
-                            <div class="service-icon">
-                                <i class="fa fa-balance-scale fa-2x"></i>
-                            </div>
-                            <a class="service-btn" href="">
-                                <i class="fa fa-link fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="mb-3">legal Advisory</h5>
-                            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
-                                sed stet lorem.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-item rounded h-100">
-                        <div class="d-flex justify-content-between">
-                            <div class="service-icon">
-                                <i class="fa fa-house-damage fa-2x"></i>
-                            </div>
-                            <a class="service-btn" href="">
-                                <i class="fa fa-link fa-2x"></i>
-                            </a>
-                        </div>
-                        <div class="p-5">
-                            <h5 class="mb-3">Tax & Insurance</h5>
-                            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam
-                                sed stet lorem.</span>
-                        </div>
-                    </div>
-                </div>
+                    @php
+                        $delayIndex = ($delayIndex + 1) % count($delays);
+                    @endphp
+                @endforeach
             </div>
         </div>
     </div>
@@ -220,60 +143,17 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="row g-5">
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        @foreach ($features as $feature)
+                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.{{ $loop->iteration }}s">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-cubes text-white"></i>
+                                    <i class="{{ $feature->icon }} text-white"></i>
                                 </div>
-                                <h6 class="mb-0">Best In Industry</h6>
+                                <h6 class="mb-0">{{ $feature->title }}</h6>
                             </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
+                            <span>{{ $feature->description }}</span>
                         </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-percent text-white"></i>
-                                </div>
-                                <h6 class="mb-0">99% Success Rate</h6>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-award text-white"></i>
-                                </div>
-                                <h6 class="mb-0">Award Winning</h6>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-smile-beam text-white"></i>
-                                </div>
-                                <h6 class="mb-0">100% Happy Client</h6>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-user-tie text-white"></i>
-                                </div>
-                                <h6 class="mb-0">Professional Advisors</h6>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.6s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-headset text-white"></i>
-                                </div>
-                                <h6 class="mb-0">24/7 Customer Support</h6>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos diam dolor</span>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -370,66 +250,8 @@
                 <h2 class="mb-5">Meet Our Team Members</h2>
             </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <h5>Full Name</h5>
-                        <p class="mb-4">Designation</p>
-                        <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-1.jpg" alt="">
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <h5>Full Name</h5>
-                        <p class="mb-4">Designation</p>
-                        <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-2.jpg" alt="">
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <h5>Full Name</h5>
-                        <p class="mb-4">Designation</p>
-                        <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-3.jpg" alt="">
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <h5>Full Name</h5>
-                        <p class="mb-4">Designation</p>
-                        <img class="img-fluid rounded-circle w-100 mb-4" src="{{ asset('front-assets') }}/img/team-4.jpg" alt="">
-                        <div class="d-flex justify-content-center">
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square text-primary bg-white m-1" href=""><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <x-team-data></x-team-data>
+
             </div>
         </div>
     </div>
